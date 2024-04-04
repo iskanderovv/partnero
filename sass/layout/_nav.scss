@@ -1,0 +1,40 @@
+@use '../abstract/variables' as vars;
+@import '../abstract/mixins';
+
+.nav {
+    display: flex;
+    align-items: center;
+    padding: 40px 0;
+
+    &__logo {
+        flex: 1;
+    }
+
+    &__list {
+        display: flex;
+        gap: 0px 56px;
+        flex: .9;
+
+        .nav__link {
+            font-size: 16px;
+            line-height: 24px;
+            color: vars.$primary-color;
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        gap: 12px;
+
+        .nav-buttons__log-in {
+            @include buttons(13px, 25px, white, vars.$primary-color, 14px);
+
+            border: 1px solid #D4D4D8;
+        }
+
+        .nav-buttons__sign-up {
+            @include buttons(13px, 25px, vars.$primary-color, white, 14px);
+        }
+    }
+
+}

@@ -1,0 +1,83 @@
+@use '../abstract/variables' as vars;
+@import '../abstract/mixins';
+@import '../abstract/keyframes';
+
+
+.programs {
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    padding-bottom: 220px;
+    position: relative;
+
+    %programs-card {
+        width: 100%;
+        max-width: 524px;
+        height: 513px;
+        border: 1px solid #E4E4E7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    %title {
+        font-size: 23px;
+        line-height: 45px;
+        letter-spacing: 1.5px;
+        color: vars.$primary-color;
+    }
+
+    %text {
+        font-size: 19px;
+        font-weight: 400;
+        line-height: 30px;
+        color: vars.$primary-color;
+    }
+
+    &__item {
+        max-width: 313px;
+    }
+
+    &__affiliate {
+        @extend %programs-card;
+
+        border-radius: 0px 0px 120px 0px;
+        animation: left 1s ease-in-out .3s;
+    }
+
+    &__referral {
+        @extend %programs-card;
+
+        border-radius: 0px 120px 0px 0px;
+        animation: right 1s ease-in-out .3s;
+
+        .programs__beta {
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: 0.699999988079071px;
+            color: #71717A;
+            border-radius: 6px;
+            padding: 4px 8px;
+            background: #E4E4E7;
+            position: absolute;
+            top: 97px;
+        }
+    }
+
+    &__title {
+        @extend %title;
+    }
+
+    &__text {
+        @extend %text;
+    }
+
+    &__button {
+        @include buttons(15px, 37px, vars.$primary-color, #fff, 20px);
+
+        display: inline-block;
+        margin-top: 30px;
+    }
+}

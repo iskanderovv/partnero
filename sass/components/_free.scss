@@ -1,0 +1,24 @@
+@use '../abstract/variables' as vars;
+@import '../abstract/mixins';
+@import '../abstract/keyframes';
+
+.free {
+    border-radius: 140px 0px 140px 0px;
+    background: #FFE3FB;
+    padding: 66px 0px 76px 0;
+    text-align: center;
+    margin-bottom: 120px;
+    animation: downtoup 1s ease-in-out;
+
+    &__title {
+        font-size: 37px;
+        font-weight: 400;
+        line-height: 48px;
+        letter-spacing: 2.4000000953674316px;
+        color: vars.$primary-color;
+        margin-bottom: 46px;
+    }
+    &__link{
+        @include buttons(15px,37px, vars.$primary-color, #fff, 20px)
+    }
+}

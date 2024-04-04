@@ -1,0 +1,9 @@
+// buttons
+@mixin buttons($px, $py, $bg, $color, $font-size){
+    padding: $px $py;
+    background: $bg;
+    color: $color;
+    border-radius: 10px;
+    border: none;
+    font-size: $font-size;
+}
